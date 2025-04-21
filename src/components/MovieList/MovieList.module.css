@@ -1,0 +1,24 @@
+.list{
+    display: flex;
+    flex-direction: row;
+   flex-wrap: wrap;
+   gap:10px;
+   list-style: none;
+  
+}
+.item{
+    display: flex;
+    flex-direction: column;
+   width: 300px;
+   
+  
+
+}
+.picture{
+    width:200px;
+
+}
+.link{
+color:black;
+font-size: 14px;
+}

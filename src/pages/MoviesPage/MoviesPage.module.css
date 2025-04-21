@@ -1,0 +1,5 @@
+.container {
+    box-sizing: border-box;
+    background-image: linear-gradient(50deg,rgb(245, 245, 179) ,rgb(156, 202, 242)  );
+
+}
