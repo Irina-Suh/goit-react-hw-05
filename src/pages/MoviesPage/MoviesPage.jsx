@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../services/api';
 import MovieList from '../../components/MovieList/MovieList';
 import s from './MoviesPage.module.css'
+import toast from 'react-hot-toast';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,8 @@ const MoviesPage = () => {
     async function fetchMovies() {
       try {
         const data = await searchMovies(query);
-       
+        if (data.results.length === 0) {
+          toast.error('Nothing found. Try another query.');}
         setMovies(data.results);
       } catch (error) {
         console.error('Error searching :', error);
@@ -41,8 +43,7 @@ const MoviesPage = () => {
         <input type="text" name="query" placeholder="Search movies..." />
         <button type="submit">Search</button>
       </form>
-
-      {movies.length > 0  && <MovieList movies={movies} />}
+      { movies.length > 0  && <MovieList movies={movies} />}
     </div>
   )
 }

@@ -18,6 +18,7 @@ const MovieReviews = lazy(() => import('./components/MovieReviews/MovieReviews')
 const App = () => {
   return (
     <>
+    
       <header >
         <Navigation />
       </header>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import s from './MovieList.module.css'
+import movieImg from '../../assets/images/no-image_s.jpg'
+
 const MovieList = ({movies }) => {
   const location = useLocation();
 console.log('movies', movies)
@@ -12,7 +14,7 @@ console.log('movies', movies)
           <img className={s.picture}
             src={ movie.backdrop_path
               ? `https://image.tmdb.org/t/p/w200${movie.backdrop_path}`
-              : '../../images/depositphotos_224693828-stock-illustration-video-linear-icon-video-concept.webp'}
+              : movieImg }
             alt={movie.title}
             
           />
